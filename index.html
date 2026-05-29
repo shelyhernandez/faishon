@@ -3,223 +3,571 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colección de Viviana</title>
+    <title>LUNA FASHION - Tienda de Moda</title>
     <style>
-        /* Estilos generales y modernos */
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #111; color: white; }
-        
-        /* Menú de navegación fijo en la parte superior */
-        header { background-color: #000; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.5); }
-        h1 { color: #b59b5a; margin: 0; font-size: 2em; }
-        nav { margin-top: 10px; }
-        nav a { text-decoration: none; background: #b59b5a; color: black; padding: 10px 20px; margin: 5px; border-radius: 5px; display: inline-block; font-weight: bold; transition: 0.3s; }
-        nav a:hover { background: #d6a28c; }
-        
-        /* Sección de bienvenida */
-        .hero { text-align: center; padding: 60px 20px; background-image: url('vino.jpg'); background-size: cover; background-position: center; border-bottom: 2px solid #b59b5a; }
-        .hero h2 { font-size: 3em; color: #d6a28c; margin-bottom: 5px; text-shadow: 2px 2px 4px black; }
-        .hero p { font-size: 1.5em; color: #fff; font-style: italic; text-shadow: 1px 1px 3px black; }
-        
-        /* Títulos de Categorías */
-        .section-title { font-family: 'Times New Roman', serif; text-align: center; font-size: 3em; margin: 60px 0 20px; color: #b59b5a; padding-top: 20px;}
-        
-        /* Cuadrícula responsiva de productos */
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto; }
-        .p-card { background: white; padding: 15px; border-radius: 10px; text-align: center; color: #333; box-shadow: 0 4px 8px rgba(0,0,0,0.3); transition: transform 0.2s; }
-        .p-card:hover { transform: scale(1.05); }
-        .p-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; }
-        .p-card h3 { margin: 10px 0 5px; font-size: 1.1em; color: #555; }
-        .p-card p { font-size: 1.3em; font-weight: bold; color: #222; margin: 0 0 10px; }
-        
-        /* Botones de compra */
-        .btn-comprar { display: inline-block; background: #722f37; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-weight: bold; width: 80%; }
-        .btn-comprar:hover { background: #8e3b45; }
-        
-        /* Sección de contacto */
-        .contact-section { display: flex; justify-content: center; flex-wrap: wrap; padding: 50px 20px; background: #222; margin-top: 50px; border-top: 2px solid #b59b5a; }
-        .form-container, .info-container { width: 100%; max-width: 400px; margin: 20px; }
-        input, textarea { width: 100%; padding: 15px; margin: 10px 0; border: none; border-radius: 5px; box-sizing: border-box; }
-        button[type="submit"] { background: #722f37; color: white; padding: 15px; width: 100%; border: none; cursor: pointer; font-size: 1.1em; border-radius: 5px; font-weight: bold; }
-        button[type="submit"]:hover { background: #8e3b45; }
-        .whatsapp-btn { display: inline-block; background: #25D366; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px; }
+        /* Estilos Generales basados en la paleta original */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Helvetica', 'Georgia', sans-serif;
+            background-color: #FFD2DC; /* Color rosa pastel original */
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #ffb6c1;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            color: #d81b60;
+        }
+
+        /* Contenedor Principal (Layout de Rejilla de Dos Columnas) */
+        .main-container {
+            display: flex;
+            max-width: 1400px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Menú Lateral Izquierdo */
+        nav {
+            width: 250px;
+            background-color: #fff;
+            padding: 30px 20px;
+            border-right: 1px solid #ffb6c1;
+            flex-shrink: 0;
+        }
+        nav h2 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #d81b60;
+            border-bottom: 2px solid #FFD2DC;
+            padding-bottom: 5px;
+        }
+        nav ul {
+            list-style: none;
+        }
+        nav ul li {
+            margin-bottom: 12px;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            color: #555;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #FFD2DC;
+            color: #d81b60;
+            padding-left: 20px;
+        }
+
+        /* Área de Contenido Derecho */
+        .content-area {
+            flex-grow: 1;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Sección de Inicio / Bienvenida */
+        .welcome-section {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .welcome-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .welcome-section p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #666;
+        }
+        .promo-images {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .promo-images img {
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .call-to-action {
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: #d81b60;
+            margin-top: 20px;
+        }
+
+        /* Ocultar secciones inactivas */
+        .catalog-section {
+            display: none;
+        }
+        .catalog-section.active {
+            display: block;
+        }
+
+        .catalog-section h2 {
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #d81b60;
+            text-transform: capitalize;
+        }
+
+        /* Rejilla de Productos Moderna */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .product-card p.name {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #444;
+            margin-bottom: 8px;
+            text-transform: capitalize;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-card p.price {
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: #d81b60;
+            margin-bottom: 15px;
+        }
+        .product-card .btn-buy {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #FFD2DC;
+            color: #d81b60;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .product-card .btn-buy:hover {
+            background-color: #ffb6c1;
+        }
+
+        /* Sección de Contacto y Formulario */
+        .contact-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #FFD2DC;
+            text-align: center;
+        }
+        .contact-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .contact-quote {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        .contact-info {
+            margin: 20px 0;
+            font-size: 1rem;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+            text-align: left;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        form input[type="text"], form input[type="email"], form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        form textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        form input[type="submit"] {
+            background-color: #d81b60;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        form input[type="submit"]:hover {
+            background-color: #b0154b;
+        }
+        .whatsapp-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #25D366;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .whatsapp-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividad para pantallas móviles */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+            }
+            nav {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #ffb6c1;
+                padding: 15px;
+            }
+            nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+            }
+            nav ul li {
+                margin-bottom: 0;
+            }
+            .content-area {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Menú Superior Fijo -->
     <header>
-        <h1>COLECCIÓN DE VIVI</h1>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#vestidos">Vestidos</a>
-            <a href="#blusas">Blusas</a>
-            <a href="#faldas">Faldas</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
+        <h1>LUNA FASHION</h1>
     </header>
 
-    <!-- Presentación -->
-    <section id="inicio" class="hero">
-        <h2>Colección de <i>Viviana</i></h2>
-        <p>Viste de confianza, brilla todos los días.</p>
-        <h3 style="color:#b59b5a; margin-top: 20px; background: rgba(0,0,0,0.7); display: inline-block; padding: 10px 20px; border-radius: 5px;">
-            CONTAMOS CON SISTEMA DE APARTADO
-        </h3>
-    </section>
+    <div class="main-container">
+        <nav>
+            <h2>Colecciones</h2>
+            <ul>
+                <li><a onclick="showSection('inicio')" id="link-inicio" class="active">Inicio</a></li>
+                <li><a onclick="showSection('blusas')" id="link-blusas">Blusas</a></li>
+                <li><a onclick="showSection('pantalones')" id="link-pantalones">Pantalones</a></li>
+                <li><a onclick="showSection('faldas')" id="link-faldas">Faldas</a></li>
+                <li><a onclick="showSection('conjuntos')" id="link-conjuntos">Conjuntos</a></li>
+                <li><a onclick="showSection('shorts')" id="link-shorts">Shorts</a></li>
+                <li><a onclick="showSection('contacto')" id="link-contacto">Contacto</a></li>
+            </ul>
+        </nav>
 
-    <!-- ==================== SECCIÓN VESTIDOS ==================== -->
-    <h2 id="vestidos" class="section-title">VESTIDOS</h2>
-    <div class="grid-container">
-        <div class="p-card"><img src="1.jpg" alt="Vestido"><h3>Vestido</h3><p>$500</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="2.jpg" alt="Vestido"><h3>Vestido</h3><p>$380</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="3.jpg" alt="Vestido"><h3>Vestido</h3><p>$290</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="4.jpg" alt="Vestido"><h3>Vestido</h3><p>$350</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="vestido.jpg" alt="Vestido"><h3>Vestido</h3><p>$400</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="5.jpg" alt="Vestido"><h3>Vestido</h3><p>$200</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="6.jpg" alt="Vestido"><h3>Vestido</h3><p>$220</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="7.jpg" alt="Vestido"><h3>Vestido</h3><p>$240</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="8.jpg" alt="Vestido"><h3>Vestido</h3><p>$210</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="9.jpg" alt="Vestido"><h3>Vestido</h3><p>$260</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="10.jpg" alt="Vestido"><h3>Vestido</h3><p>$240</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="11.jpg" alt="Vestido"><h3>Vestido</h3><p>$250</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="12.jpg" alt="Vestido"><h3>Vestido</h3><p>$275</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="13.jpg" alt="Vestido"><h3>Vestido</h3><p>$300</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="14.jpg" alt="Vestido"><h3>Vestido</h3><p>$238</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="15.jpg" alt="Vestido"><h3>Vestido</h3><p>$280</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="16.jpg" alt="Vestido"><h3>Vestido</h3><p>$252</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="17.jpg" alt="Vestido"><h3>Vestido</h3><p>$250</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="18.jpg" alt="Vestido"><h3>Vestido</h3><p>$220</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="19.jpg" alt="Vestido"><h3>Vestido</h3><p>$225</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="20.jpg" alt="Vestido"><h3>Vestido</h3><p>$336</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="21.jpg" alt="Vestido"><h3>Vestido</h3><p>$260</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="22.jpg" alt="Vestido"><h3>Vestido</h3><p>$395</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="23.jpg" alt="Vestido"><h3>Vestido</h3><p>$235</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="24.jpg" alt="Vestido"><h3>Vestido</h3><p>$225</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="25.jpg" alt="Vestido"><h3>Vestido</h3><p>$215</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="26.jpg" alt="Vestido"><h3>Vestido</h3><p>$300</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="27.jpg" alt="Vestido"><h3>Vestido</h3><p>$250</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="28.jpg" alt="Vestido"><h3>Vestido</h3><p>$279</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="30.jpg" alt="Vestido"><h3>Vestido</h3><p>$380</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="31.jpg" alt="Vestido"><h3>Vestido</h3><p>$340</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="32.jpg" alt="Vestido"><h3>Vestido</h3><p>$290</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="33.jpg" alt="Vestido"><h3>Vestido</h3><p>$360</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="34.jpg" alt="Vestido"><h3>Vestido</h3><p>$321</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="35.jpg" alt="Vestido"><h3>Vestido</h3><p>$310</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="36.jpg" alt="Vestido"><h3>Vestido</h3><p>$365</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="37.jpg" alt="Vestido"><h3>Vestido</h3><p>$250</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="38.jpg" alt="Vestido"><h3>Vestido</h3><p>$200</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="39.jpg" alt="Vestido"><h3>Vestido</h3><p>$270</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="40.jpg" alt="Vestido"><h3>Vestido</h3><p>$260</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
+        <main class="content-area">
+            
+            <section id="inicio" class="catalog-section active">
+                <div class="welcome-section">
+                    <h2>Descubre tu estilo en Luna Fashion</h2>
+                    <p>Moda que resalta tu belleza natural</p>
+                    <p>Calidad, estilo y comodidad en un solo lugar</p>
+                    
+                    <div class="promo-images">
+                        <img src="imagen.jpg" alt="Moda Luna Fashion 1">
+                        <img src="imagen1.jpg" alt="Moda Luna Fashion 2">
+                    </div>
+                    
+                    <p class="call-to-action">¡Compra ahora y luce increíble!</p>
+                </div>
+            </section>
+
+            <section id="blusas" class="catalog-section">
+                <h2>Blusas</h2>
+                <div class="products-grid">
+                    <div class="product-card"><img src="blusa0.jpg" alt="blusa de malla"><p class="name">blusa de malla</p><p class="price">$199</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa1.jpg" alt="blusa sin mangas florado azul"><p class="name">blusa sin mangas florado azul</p><p class="price">$210</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa2.jpg" alt="blusa de rayas de corte ajustado"><p class="name">blusa de rayas de corte ajustado</p><p class="price">$220</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa3.jpg" alt="blusa de manga larga con cuello"><p class="name">blusa de manga larga con cuello</p><p class="price">$190</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa4.jpg" alt="blusa casual de hombros decubiertos"><p class="name">blusa casual de hombros decubiertos</p><p class="price">$180</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa5.jpg" alt="top unicolor ancho de tirantes"><p class="name">top unicolor ancho de tirantes</p><p class="price">$230</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa6.jpg" alt="top casual de esconte cuadrado"><p class="name">top casual de esconte cuadrado</p><p class="price">$190</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa7.jpg" alt="top casual con cuello"><p class="name">top casual con cuello</p><p class="price">$240</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa8.jpg" alt="top tubo si custura"><p class="name">top tubo si custura</p><p class="price">$149</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa9.jpg" alt="top casual camisola"><p class="name">top casual camisola</p><p class="price">$150</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa10.jpg" alt="top casual con lazo"><p class="name">top casual con lazo</p><p class="price">$250</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa11.jpg" alt="top halter casual"><p class="name">top halter casual</p><p class="price">$219</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa12.jpg" alt="top de verano coqueto"><p class="name">top de verano coqueto</p><p class="price">$130</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa13.jpg" alt="top casual collar sin mangas"><p class="name">top casual collar sin mangas</p><p class="price">$240</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa14.jpg" alt="top de tirantes ajustado"><p class="name">top de tirantes ajustado</p><p class="price">$170</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa15.jpg" alt="camiseta crop estanpado"><p class="name">camiseta crop estanpado</p><p class="price">$260</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa16.jpg" alt="camisa de manga corta"><p class="name">camisa de manga corta</p><p class="price">$180</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa17.jpg" alt="top sin tirantes"><p class="name">top sin tirantes</p><p class="price">$190</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa18.jpg" alt="top de tubo funcido"><p class="name">top de tubo funcido</p><p class="price">$130</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa19.jpg" alt="camisata ajustada con cuello"><p class="name">camisata ajustada con cuello</p><p class="price">$140</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa20.jpg" alt="camiseta casual de manga corta"><p class="name">camiseta casual de manga corta</p><p class="price">$140</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa21.jpg" alt="camiseta de manga corta"><p class="name">camiseta de manga corta</p><p class="price">$180</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa22.jpg" alt="camiseta crop de cuello"><p class="name">camiseta crop de cuello</p><p class="price">$192</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa23.jpg" alt="camiseta de manga corta"><p class="name">camiseta de manga corta</p><p class="price">$180</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa24.jpg" alt="blusa de hombros descubiertos"><p class="name">blusa de hombros descubiertos</p><p class="price">$192</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa25.jpg" alt="top corto con escote halter"><p class="name">top corto con escote halter</p><p class="price">$154</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa26.jpg" alt="camisa de punto de mangua corta"><p class="name">camisa de punto de mangua corta</p><p class="price">$252</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa27.jpg" alt="camiseta de manga corte slim con hombro"><p class="name">camiseta de manga corte slim con hombro</p><p class="price">$265</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa28.jpg" alt="Top de verano con lazo"><p class="name">Top de verano con lazo</p><p class="price">$222</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa29.jpg" alt="top roja sin tirantes"><p class="name">top roja sin tirantes</p><p class="price">$189</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa30.jpg" alt="top tank punto de cuello"><p class="name">top tank punto de cuello</p><p class="price">$182</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="blusa31.jpg" alt="Top corto con hombros descubiertos"><p class="name">Top corto con hombros descubiertos</p><p class="price">$172</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                </div>
+            </section>
+
+            <section id="pantalones" class="catalog-section">
+                <h2>Pantalones</h2>
+                <div class="products-grid">
+                    <div class="product-card"><img src="pantolon1.jpg" alt="pantalon rasgado"><p class="name">pantalon rasgado</p><p class="price">$450</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="2.jpg" alt="pantalon casual"><p class="name">pantalon casual</p><p class="price">$350</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="3.jpg" alt="jeans azul oscuro"><p class="name">jeans azul oscuro</p><p class="price">$550</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="4.jpg" alt="jeans azul lavado medio"><p class="name">jeans azul lavado medio</p><p class="price">$250</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="5.jpg" alt="jeans ajustados rasgado"><p class="name">jeans ajustados rasgado</p><p class="price">$350</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="6.jpg" alt="jeans liso ajustado"><p class="name">jeans liso ajustado</p><p class="price">$450</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="7.jpg" alt="jeans ajustado a la cintura"><p class="name">jeans ajustado a la cintura</p><p class="price">$450</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="8.jpg" alt="jeans acampanado azul collar"><p class="name">jeans acampanado azul collar</p><p class="price">$550</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="9.jpg" alt="jeans corte acampando azul oscuro"><p class="name">jeans corte acampando azul oscuro</p><p class="price">$350</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="10.jpg" alt="jenas corteacampanado lavado ligero"><p class="name">jeans corte acampanado lavado ligero</p><p class="price">$450</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="11.jpg" alt="jeans corte acampanado azul mezclilla liso"><p class="name">jeans corte acampanado azul mezclilla liso</p><p class="price">$650</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="12.jpg" alt="jeans corte acampanado liso"><p class="name">jeans corte acampanado liso</p><p class="price">$750</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="13.jpg" alt="jeans corte acampanado casual lisa"><p class="name">jeans corte acampanado casual lisa</p><p class="price">$350</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="14.jpg" alt="jeans acampando lavado claro"><p class="name">jeans acampando lavado claro</p><p class="price">$450</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="15.jpg" alt="jeans casual mezclilla lisa"><p class="name">jeans casual mezclilla lisa</p><p class="price">$540</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="16.jpg" alt="jeans casual lavado claro"><p class="name">jeans casual lavado claro</p><p class="price">$490</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="17.jpg" alt="jeans casual azul"><p class="name">jeans casual azul</p><p class="price">$480</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="18.jpg" alt="jeans casual azul lavado"><p class="name">jeans casual azul lavado</p><p class="price">$490</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="19.jpg" alt="jeans casual azul claro"><p class="name">jeans casual azul claro</p><p class="price">$480</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="20.jpg" alt="jeans azul claro medio casual"><p class="name">jeans azul claro medio casual</p><p class="price">$480</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="21.jpg" alt="jeans vaquero casual"><p class="name">jeans vaquero casual</p><p class="price">$480</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="22.jpg" alt="pantalones macizos de cintura alta"><p class="name">pantalones macizos de cintura alta</p><p class="price">$540</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="23.jpg" alt="pantalones vaqueros informales"><p class="name">pantalones vaqueros informales</p><p class="price">$480</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="24.jpg" alt="pantalones ajustados azul cuello"><p class="name">pantalones ajustados azul cuello</p><p class="price">$480</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="25.jpg" alt="jeans casual de corte"><p class="name">jeans casual de corte</p><p class="price">$520</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="26.jpg" alt="jeans ajustado con diseño"><p class="name">jeans ajustado con diseño</p><p class="price">$480</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="27.jpg" alt="jeans rosa casual mezclilla liso"><p class="name">jeans rosa casual mezclilla liso</p><p class="price">$520</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="28.jpg" alt="jeans cafe casual"><p class="name">jeans cafe casual</p><p class="price">$490</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                </div>
+            </section>
+
+            <section id="faldas" class="catalog-section">
+                <h2>Faldas</h2>
+                <div class="products-grid">
+                    <div class="product-card"><img src="falda1.jpg" alt="falda color verde florado"><p class="name">falda color verde florado</p><p class="price">$125</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f2.jpg" alt="falda color roja"><p class="name">falda color roja</p><p class="price">$115</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f3.jpg" alt="falda azul cielo"><p class="name">falda azul cielo</p><p class="price">$120</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f4.jpg" alt="falda azul marino"><p class="name">falda azul marino</p><p class="price">$140</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f5.jpg" alt="falda gris"><p class="name">falda gris</p><p class="price">$150</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f6.jpg" alt="falda color cafe"><p class="name">falda color cafe</p><p class="price">$125</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f7.jpg" alt="falda verde menta"><p class="name">falda verde menta</p><p class="price">$135</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f8.jpg" alt="falda rosa claro"><p class="name">falda rosa claro</p><p class="price">$129</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f9.jpg" alt="falda encaje sencillo"><p class="name">falda encaje sencillo</p><p class="price">$135</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f10.jpg" alt="falda rosa con volantes de capa"><p class="name">falda rosa con volantes de capa</p><p class="price">$140</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f11.jpg" alt="falda crema"><p class="name">falda crema</p><p class="price">$129</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f12.jpg" alt="falda de bordada con flores"><p class="name">falda de bordada con flores</p><p class="price">$135</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f13.jpg" alt="falda elegante de verano"><p class="name">falda elegante de verano</p><p class="price">$140</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f14.jpg" alt="falda pastel de multiples"><p class="name">falda pastel de multiples</p><p class="price">$140</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f15.jpg" alt="falda mezcilla"><p class="name">falda mezcilla</p><p class="price">$129</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f16.jpg" alt="falda vaquera"><p class="name">falda vaquera</p><p class="price">$135</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f17.jpg" alt="falda vaquera"><p class="name">falda vaquera</p><p class="price">$140</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f18.jpg" alt="falda mezclilla desgarro"><p class="name">falda mezclilla desgarro</p><p class="price">$140</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f19.jpg" alt="falda mezclilla"><p class="name">falda mezclilla</p><p class="price">$129</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f20.jpg" alt="falda asimetrica de mezclilla"><p class="name">falda asimetrica de mezclilla</p><p class="price">$135</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f21.jpg" alt="falda mini"><p class="name">falda mini</p><p class="price">$140</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f22.jpg" alt="falda azul claro"><p class="name">falda azul claro</p><p class="price">$140</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f23.jpg" alt="falda vaquera verde"><p class="name">falda vaquera verde</p><p class="price">$129</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f24.jpg" alt="falda versatil negro"><p class="name">falda versatil negro</p><p class="price">$135</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f25.jpg" alt="falda mezclilla lavado claro"><p class="name">falda mezclilla lavado claro</p><p class="price">$140</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f26.jpg" alt="falda mezclilla rosa"><p class="name">falda mezclilla rosa</p><p class="price">$140</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f27.jpg" alt="falda fuida de cintura color durazno"><p class="name">falda fuida de cintura color durazno</p><p class="price">$220</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="f28.jpg" alt="falda de vacaciones con cierre de cremallera"><p class="name">falda de vacaciones con cierre de cremallera</p><p class="price">$230</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                </div>
+            </section>
+
+            <section id="conjuntos" class="catalog-section">
+                <h2>Conjuntos</h2>
+                <div class="products-grid">
+                    <div class="product-card"><img src="conjunto1.jpg" alt="conjunto blanco"><p class="name">conjunto blanco</p><p class="price">$199</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c1.jpg" alt="conjunto corse de encaje"><p class="name">conjunto corse de encaje</p><p class="price">$229</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c2.jpg" alt="conjunto camisola de flor metalica"><p class="name">conjunto camisola de flor metalica</p><p class="price">$249</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c3.jpg" alt="conjunto amarillo"><p class="name">conjunto amarillo</p><p class="price">$260</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c4.jpg" alt="conjunto blanco"><p class="name">conjunto blanco</p><p class="price">$279</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c5.jpg" alt="Conjunto elegante de top"><p class="name">Conjunto elegante de top</p><p class="price">$299</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c6.jpg" alt="Conjunto marga corta floral"><p class="name">Conjunto marga corta floral</p><p class="price">$243</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c7.jpg" alt="conjunto de verano"><p class="name">conjunto de verano</p><p class="price">$260</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c8.jpg" alt="Conjunto amarillo claro"><p class="name">Conjunto amarillo claro</p><p class="price">$330</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c9.jpg" alt="Conjunto de verano sin tirantes"><p class="name">Conjunto de verano sin tirantes</p><p class="price">$288</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c10.jpg" alt="Conjunto top rosa"><p class="name">Conjunto top rosa</p><p class="price">$441</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c11.jpg" alt="Conjunto blanco floral"><p class="name">Conjunto blanco floral</p><p class="price">$532</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c12.jpg" alt="Conjunto de tirantes azul marino"><p class="name">Conjunto de tirantes azul marino</p><p class="price">$221</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c13.jpg" alt="Conjunto elegante"><p class="name">Conjunto elegante</p><p class="price">$252</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c14.jpg" alt="Conjunto de shorts color crema"><p class="name">Conjunto de shorts color crema</p><p class="price">$199</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c15.jpg" alt="Conjunto short color blanco"><p class="name">Conjunto short color blanco</p><p class="price">$321</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c16.jpg" alt="Conjunto top de shorts"><p class="name">Conjunto top de shorts</p><p class="price">$267</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c17.jpg" alt="Conjunto top informal shorts"><p class="name">Conjunto top informal shorts</p><p class="price">$219</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c18.jpg" alt="Conjunto top sin mangas"><p class="name">Conjunto top sin mangas</p><p class="price">$224</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c19.jpg" alt="Conjunto de verano un hombro de manga"><p class="name">Conjunto de verano un hombro de manga</p><p class="price">$241</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c20.jpg" alt="Conjunto top de verano solo hombro"><p class="name">Conjunto top de verano solo hombro</p><p class="price">$244</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c21.jpg" alt="Conjunto top corto asimétrico"><p class="name">Conjunto top corto asimétrico</p><p class="price">$210</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c22.jpg" alt="Conjunto informal top de tirantes"><p class="name">Conjunto informal top de tirantes</p><p class="price">$220</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c23.jpg" alt="Conjunto informal"><p class="name">Conjunto informal</p><p class="price">$180</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c24.jpg" alt="Conjunto top verde"><p class="name">Conjunto top verde</p><p class="price">$220</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c25.jpg" alt="Conjunto top cropped"><p class="name">Conjunto top cropped</p><p class="price">$180</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c26.jpg" alt="Conjunto de verano rosa fucsia"><p class="name">Conjunto de verano rosa fucsia</p><p class="price">$188</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="c27.jpg" alt="Conjuto de pantalon"><p class="name">Conjuto de pantalon</p><p class="price">$190</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                </div>
+            </section>
+
+            <section id="shorts" class="catalog-section">
+                <h2>Shorts</h2>
+                <div class="products-grid">
+                    <div class="product-card"><img src="short1.jpg" alt="short de mezclilla con dobladillo de margaritas"><p class="name">short de mezclilla con dobladillo de margaritas</p><p class="price">$434</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s2.jpg" alt="short de mezclilla azul pretina media"><p class="name">short de mezclilla azul pretina media</p><p class="price">$436</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s3.jpg" alt="short de mezclilla bordado floral"><p class="name">short de mezclilla bordado floral</p><p class="price">$405</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s4.jpg" alt="short Denim casual"><p class="name">short Denim casual</p><p class="price">$405</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s5.jpg" alt="short de cinta alta casual"><p class="name">short de cinta alta casual</p><p class="price">$445</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s6.jpg" alt="short en mezclilla de cintura"><p class="name">short en mezclilla de cintura</p><p class="price">$377</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s7.jpg" alt="short Denim simples adornada"><p class="name">short Denim simples adornada</p><p class="price">$359</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s8.jpg" alt="short de mezclilla azul con pedreria"><p class="name">short de mezclilla azul con pedreria</p><p class="price">$550</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s9.jpg" alt="short de mezclilla con look pedreria"><p class="name">short de mezclilla con look pedreria</p><p class="price">$470</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s10.jpg" alt="short jeans cintura alta"><p class="name">short jeans cintura alta</p><p class="price">$426</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s11.jpg" alt="short de mezclilla cintura alta"><p class="name">short de mezclilla cintura alta</p><p class="price">$340</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s12.jpg" alt="short jeans cintura del saco"><p class="name">short jeans cintura del saco</p><p class="price">$320</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s13.jpg" alt="short Denim con tiro elastico"><p class="name">short Denim con tiro elastico</p><p class="price">$325</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s14.jpg" alt="short de mezclilla desgarro"><p class="name">short de mezclilla desgarro</p><p class="price">$331</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s15.jpg" alt="short de mezclilla desgarro"><p class="name">short de mezclilla desgarro</p><p class="price">$396</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s16.jpg" alt="short jeans rasgados"><p class="name">short jeans rasgados</p><p class="price">$330</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s17.jpg" alt="short de mezclilla rasgado"><p class="name">short de mezclilla rasgado</p><p class="price">$339</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s18.jpg" alt="short de mezclilla rasgados con dobladillo"><p class="name">short de mezclilla rasgados con dobladillo</p><p class="price">$379</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s19.jpg" alt="short de mezclilla rasgados"><p class="name">short de mezclilla rasgados</p><p class="price">$365</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s20.jpg" alt="short de mezclilla con doblallido rasgado"><p class="name">short de mezclilla con doblallido rasgado</p><p class="price">$431</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s21.jpg" alt="short de mezclilla bajo negro"><p class="name">short de mezclilla bajo negro</p><p class="price">$375</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s22.jpg" alt="short de mezclilla rasgados blanco"><p class="name">short de mezclilla rasgados blanco</p><p class="price">$330</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s23.jpg" alt="short de mezclilla desgarro verde menta"><p class="name">short de mezclilla desgarro verde menta</p><p class="price">$349</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                    <div class="product-card"><img src="s24.jpg" alt="short de mezlilla forma de estrella rosa collar"><p class="name">short de mezlilla forma de estrella rosa collar</p><p class="price">$439</p><button class="btn-buy" onclick="showSection('contacto')">Comprar</button></div>
+                </div>
+            </section>
+
+            <section id="contacto" class="catalog-section contact-section">
+                <h2>Contacto</h2>
+                <p class="contact-quote">“Gracias por visitar nuestra colección. La elegancia continúa contigo; contáctanos y descubre más de nuestra colección”</p>
+                
+                <h3>Contáctanos</h3>
+                <form onsubmit="event.preventDefault(); alert('¡Mensaje enviado correctamente!');">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" required>
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+
+                    <input type="submit" value="Enviar">
+                </form>
+
+                <div class="contact-info">
+                    <p>📧 Email: <strong>lunafashion@gmail.com</strong></p>
+                    <p>💬 WhatsApp: <strong>7714256901</strong></p>
+                    <a href="https://wa.me/7714256901" target="_blank" class="whatsapp-link">📲 Enviar Mensaje Directo por WhatsApp</a>
+                </div>
+            </section>
+
+        </main>
     </div>
 
-    <!-- ==================== SECCIÓN BLUSAS ==================== -->
-    <h2 id="blusas" class="section-title">BLUSAS</h2>
-    <div class="grid-container">
-        <div class="p-card"><img src="41.jpg" alt="Blusa"><h3>Blusa</h3><p>$180</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="42.jpg" alt="Blusa"><h3>Blusa</h3><p>$250</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="43.jpg" alt="Blusa"><h3>Blusa</h3><p>$210</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="44.jpg" alt="Blusa"><h3>Blusa</h3><p>$195</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="45.jpg" alt="Blusa"><h3>Blusa</h3><p>$125</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="46.jpg" alt="Blusa"><h3>Blusa</h3><p>$200</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="47.jpg" alt="Blusa"><h3>Blusa</h3><p>$220</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="48.jpg" alt="Blusa"><h3>Blusa</h3><p>$220</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="49.jpg" alt="Blusa"><h3>Blusa</h3><p>$210</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="50.jpg" alt="Blusa"><h3>Blusa</h3><p>$189</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="51.jpg" alt="Blusa"><h3>Blusa</h3><p>$210</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="52.jpg" alt="Blusa"><h3>Blusa</h3><p>$250</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="53.jpg" alt="Blusa"><h3>Blusa</h3><p>$165</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="54.jpg" alt="Blusa"><h3>Blusa</h3><p>$170</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="55.jpg" alt="Blusa"><h3>Blusa</h3><p>$198</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="56.jpg" alt="Blusa"><h3>Blusa</h3><p>$180</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="57.jpg" alt="Blusa"><h3>Blusa</h3><p>$152</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="58.jpg" alt="Blusa"><h3>Blusa</h3><p>$150</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="59.jpg" alt="Blusa"><h3>Blusa</h3><p>$220</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="60.jpg" alt="Blusa"><h3>Blusa</h3><p>$135</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="61.jpg" alt="Blusa"><h3>Blusa</h3><p>$156</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="62.jpg" alt="Blusa"><h3>Blusa</h3><p>$160</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="63.jpg" alt="Blusa"><h3>Blusa</h3><p>$195</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="64.jpg" alt="Blusa"><h3>Blusa</h3><p>$235</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="65.jpg" alt="Blusa"><h3>Blusa</h3><p>$195</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="66.jpg" alt="Blusa"><h3>Blusa</h3><p>$215</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="67.jpg" alt="Blusa"><h3>Blusa</h3><p>$170</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="68.jpg" alt="Blusa"><h3>Blusa</h3><p>$150</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="69.jpg" alt="Blusa"><h3>Blusa</h3><p>$179</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="70.jpg" alt="Blusa"><h3>Blusa</h3><p>$180</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="71.jpg" alt="Blusa"><h3>Blusa</h3><p>$200</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="72.jpg" alt="Blusa"><h3>Blusa</h3><p>$200</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="73.jpg" alt="Blusa"><h3>Blusa</h3><p>$197</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="74.jpg" alt="Blusa"><h3>Blusa</h3><p>$200</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="75.jpg" alt="Blusa"><h3>Blusa</h3><p>$250</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="76.jpg" alt="Blusa"><h3>Blusa</h3><p>$193</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="77.jpg" alt="Blusa"><h3>Blusa</h3><p>$150</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="78.jpg" alt="Blusa"><h3>Blusa</h3><p>$210</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="79.jpg" alt="Blusa"><h3>Blusa</h3><p>$190</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="80.jpg" alt="Blusa"><h3>Blusa</h3><p>$200</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-    </div>
+    <script>
+        function showSection(sectionId) {
+            // Ocultar todas las secciones
+            const sections = document.querySelectorAll('.catalog-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
 
-    <!-- ==================== SECCIÓN FALDAS ==================== -->
-    <h2 id="faldas" class="section-title">FALDAS</h2>
-    <div class="grid-container">
-        <div class="p-card"><img src="81.jpg" alt="Falda"><h3>Falda</h3><p>$150</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="82.jpg" alt="Falda"><h3>Falda</h3><p>$180</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="83.jpg" alt="Falda"><h3>Falda</h3><p>$290</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="84.jpg" alt="Falda"><h3>Falda</h3><p>$250</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="85.jpg" alt="Falda"><h3>Falda</h3><p>$210</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="86.jpg" alt="Falda"><h3>Falda</h3><p>$200</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="87.jpg" alt="Falda"><h3>Falda</h3><p>$220</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="88.jpg" alt="Falda"><h3>Falda</h3><p>$240</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="89.jpg" alt="Falda"><h3>Falda</h3><p>$210</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="90.jpg" alt="Falda"><h3>Falda</h3><p>$260</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="91.jpg" alt="Falda"><h3>Falda</h3><p>$240</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="92.jpg" alt="Falda"><h3>Falda</h3><p>$250</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="93.jpg" alt="Falda"><h3>Falda</h3><p>$275</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="94.jpg" alt="Falda"><h3>Falda</h3><p>$300</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="95.jpg" alt="Falda"><h3>Falda</h3><p>$338</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="96.jpg" alt="Falda"><h3>Falda</h3><p>$280</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="97.jpg" alt="Falda"><h3>Falda</h3><p>$252</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="98.jpg" alt="Falda"><h3>Falda</h3><p>$250</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="99.jpg" alt="Falda"><h3>Falda</h3><p>$220</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="100.jpg" alt="Falda"><h3>Falda</h3><p>$235</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="101.jpg" alt="Falda"><h3>Falda</h3><p>$356</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="102.jpg" alt="Falda"><h3>Falda</h3><p>$360</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="103.jpg" alt="Falda"><h3>Falda</h3><p>$295</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="104.jpg" alt="Falda"><h3>Falda</h3><p>$235</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="105.jpg" alt="Falda"><h3>Falda</h3><p>$395</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="106.jpg" alt="Falda"><h3>Falda</h3><p>$215</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="107.jpg" alt="Falda"><h3>Falda</h3><p>$300</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="108.jpg" alt="Falda"><h3>Falda</h3><p>$399</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="109.jpg" alt="Falda"><h3>Falda</h3><p>$479</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="110.jpg" alt="Falda"><h3>Falda</h3><p>$280</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="111.jpg" alt="Falda"><h3>Falda</h3><p>$200</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="112.jpg" alt="Falda"><h3>Falda</h3><p>$310</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="113.jpg" alt="Falda"><h3>Falda</h3><p>$294</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="114.jpg" alt="Falda"><h3>Falda</h3><p>$252</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="115.jpg" alt="Falda"><h3>Falda</h3><p>$300</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="116.jpg" alt="Falda"><h3>Falda</h3><p>$288</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="117.jpg" alt="Falda"><h3>Falda</h3><p>$296</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="118.jpg" alt="Falda"><h3>Falda</h3><p>$398</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="119.jpg" alt="Falda"><h3>Falda</h3><p>$410</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-        <div class="p-card"><img src="120.jpg" alt="Falda"><h3>Falda</h3><p>$384</p><a href="#contacto" class="btn-comprar">Comprar</a></div>
-    </div>
+            // Quitar clase activa de los enlaces del menú
+            const links = document.querySelectorAll('nav ul li a');
+            links.forEach(link => {
+                link.classList.remove('active');
+            });
 
-    <!-- ==================== SECCIÓN CONTACTO ==================== -->
-    <section id="contacto" class="contact-section">
-        <div class="form-container">
-            <h2 style="color:#b59b5a;">¡Haz tu pedido hoy mismo!</h2>
-            <form action="https://formspree.io/f/tu_codigo" method="POST">
-                <input type="text" name="nombre" placeholder="Nombre" required>
-                <input type="email" name="correo" placeholder="Correo" required>
-                <textarea name="mensaje" placeholder="Indícanos qué artículo te interesó..." rows="4" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-        <div class="info-container">
-            <h2 style="color:#b59b5a;">Contáctanos</h2>
-            <p style="font-size: 1.2em;">☎️ <strong>+58 412-3977798</strong></p>
-            <p style="font-size: 1.2em;">💬 <strong>WhatsApp</strong></p>
-            <a href="https://wa.me/584123977798" class="whatsapp-btn" target="_blank">📱 Enviar mensaje</a>
-        </div>
-    </section>
+            // Mostrar la sección seleccionada
+            const activeSection = document.getElementById(sectionId);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
 
+            // Activar el enlace correspondiente
+            const activeLink = document.getElementById('link-' + sectionId);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+
+            // Desplazar la pantalla arriba automáticamente al cambiar de catálogo
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
